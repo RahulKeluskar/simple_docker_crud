@@ -9,7 +9,7 @@ sap.ui.define([], function() {
           console.log("HERE")
 
         
-          jQuery.ajax({async: false, type:"GET", url: "http://localhost:80/colours",
+          jQuery.ajax({async: false, type:"GET", url: "http://ec2-3-22-95-211.us-east-2.compute.amazonaws.com:80/colours",
           success : function(data, textStatus, jqXHR)
           {
             console.log(data);
