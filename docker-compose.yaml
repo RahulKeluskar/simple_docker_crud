@@ -1,0 +1,41 @@
+version: '3.1'
+
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+  
+
+  app:
+    image: spring-boot-app:1
+    depends_on:
+      - db  
+    ports:
+      - 80:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/colours_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=example
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+
+  ui:
+    image: sap-ui7
+    links:
+      - "app"
+    depends_on: 
+      - "app"
+    ports:
+      - 8080:8080
+    
+    

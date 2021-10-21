@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:experimental
+FROM node:12 as build_env
+RUN npm install -g @ui5/cli
+COPY src src
+RUN cd src && npm install -y && ui5 build
+
+FROM httpd:2.4-alpine
+COPY --from=build_env src/dist /usr/local/apache2/htdocs/

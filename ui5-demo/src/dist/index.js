@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/ComponentContainer"],function(e){"use strict";new e({name:"sap.scholar.demo",settings:{id:"demo"},async:true}).placeAt("content")});
