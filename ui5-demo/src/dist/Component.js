@@ -1,1 +1,0 @@
-sap.ui.define(["sap/ui/core/UIComponent","sap/ui/model/resource/ResourceModel"],function(e,i){"use strict";return e.extend("sap.scholar.demo.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);var t=new i({bundleName:"sap.scholar.demo.i18n.i18n"});this.setModel(t,"i18n");this.getRouter().initialize()}})});

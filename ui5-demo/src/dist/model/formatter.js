@@ -1,1 +1,0 @@
-sap.ui.define([],function(){return{getFormattedFrequency:function(e){if(e){return e}return"Not defined"},formatfrequencyState:function(e){if(e){if(e<500){return sap.ui.core.ValueState.Error}else if(e<520){return sap.ui.core.ValueState.Warning}else if(e<620){return sap.ui.core.ValueState.Success}else{return sap.ui.core.ValueState.None}}else{return sap.ui.core.ValueState.None}}}});
